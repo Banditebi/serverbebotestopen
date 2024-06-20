@@ -50,7 +50,9 @@ bot.onText(/\/updatecoins (.+)/, (msg, match) => {
   const newCoins = match[1];
 
   axios
-    .post("http://localhost:3001/api/updateCoins", { coins: newCoins })
+    .post("https://thunderous-blancmange-ec0ff6.netlify.app/", {
+      coins: newCoins,
+    })
     .then((response) => {
       bot.sendMessage(chatId, `Монеты обновлены: ${newCoins}`);
     })
